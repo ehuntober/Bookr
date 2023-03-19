@@ -40,7 +40,7 @@ class Book(models.Model):
 
     
 
-class BookContributors(models.Model):
+class BookContributor(models.Model):
     class ContributionRole(models.TextChoices):
         AUTHOR = "AUTHOR","Author"
         CO_AUTHOR = "CO_AUTHOR" , "Co-Author"
