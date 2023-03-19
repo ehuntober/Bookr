@@ -1,8 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
-
 from django.http import HttpResponse 
+from django.views.generic import TemplateView
+
+class HomePage(TemplateView):
+    TemplateVeiw ='home_page.html'
+
+
 
 def index(request):
     name = "world"
