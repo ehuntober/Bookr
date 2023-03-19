@@ -5,5 +5,5 @@ from django.shortcuts import render
 from django.http import HttpResponse 
 
 def index(request):
-    name = request.Get.get("name") or "world"
+    name = request.get("name") or "world"
     return HttpResponse("Hello, {}".format(name))
