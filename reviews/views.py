@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 
 from .utils import average_rating 
+from .models import Book
 
 
 def welcome_view(request):
@@ -24,6 +25,11 @@ def book_list(request):
             book_rating = None
             number_of_reviews = 0
             
-        book_list.append({
-            "book":book, 'book_rating':book_rating, 'number_of_reviews'
-        })
+        book_list.append({"book":book, 'book_rating':book_rating, 'number_of_reviews':number_of_reviews})
+        
+        context = {
+            "book_list":book_list
+        }
+        
+        return render(request,'reviews/books_list.html',context)
+        
