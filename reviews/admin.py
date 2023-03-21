@@ -20,6 +20,20 @@ class BookAdmin(admin.ModelAdmin):
     
 class  ReviewAdmin(admin.ModelAdmin):
     exclude=['date_edited']
+    fieldsets = (
+        (None, {
+            "fields": (
+                'creator', 'book'
+            ),
+            
+            (
+                'Review content',{
+                    "fields":('content','rating')
+                }
+            )
+        }),
+    )
+    
 
 
 admin.site.register(Publisher)
