@@ -24,14 +24,13 @@ class  ReviewAdmin(admin.ModelAdmin):
         (None, {
             "fields": (
                 'creator', 'book'
-            ),
+            )}),
             
             (
                 'Review content',{
                     "fields":('content','rating')
                 }
             )
-        }),
     )
     
 
