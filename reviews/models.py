@@ -33,7 +33,7 @@ class Book(models.Model):
     contributors = models.ManyToManyField('Contributor')
     
     def __str__(self):
-        return self.title
+        return "{} ({})".format(self.title,self.isnb)
     
     
     
