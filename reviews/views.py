@@ -21,6 +21,14 @@ def book_search(request):
         if search_in == 'title':
             books = Book.objects.filter(title__icontains=search)
         if search_in == "title":
+            books =  Book.objects.filter(title__icotains=search)
+        else:
+            fname_contributors = \
+                Contributor.objects.filter(first_names__icontains=search)
+                
+            for contributor in fname_contributors:
+                for book in contributor.book_set.all():
+                    books.add(book)
     return render(request, "reviews/search-results.html", {"search_text": search_text})
 
 
