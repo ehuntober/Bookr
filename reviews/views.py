@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 
 from .models import Book
 from .utils import average_rating
+from .forms import SearchForm 
+from .models import Book , Contributor 
+
 
 
 def index(request):
