@@ -1,6 +1,11 @@
+from django import forms 
 
-from django.forms import Form
 
 class SearchForm(forms.Form):
+    search = forms.CharField(required=False, min_length=3)
+    search_in = forms.ChoiceField(required=False,choices=(
+                              ("title","Title"),
+                              ("contributor","Contributor")
+    ))
     
     
