@@ -4,7 +4,7 @@ from .models import Book
 from .utils import average_rating
 from .forms import SearchForm 
 from .models import Book , Contributor 
-#import this 
+
 
 
 def index(request):
