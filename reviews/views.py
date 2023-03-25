@@ -21,7 +21,7 @@ def book_search(request):
         if search_in == 'title':
             books = Book.objects.filter(title__icontains=search)
         if search_in == "title":
-            books =  Book.objects.filter(title__icotains=search)
+            books =  Book.objects.filter(title__icontains=search)
         else:
             fname_contributors = Contributor.objects.filter(first_names__icontains=search)
                 
