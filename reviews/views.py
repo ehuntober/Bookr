@@ -11,13 +11,7 @@ from .PublisherForm import PublisherForm
 def index(request):
     return render(request, "reviews/base.html")
 
-def postReview(request,pk):
-    
-    if create:
-        initial = {}
-    else:
-        publisher = Publisher.objects.get(pk=pk)
-        initial = {"name": publisher.name, "website": publisher.website, "email": publisher.email}
+
     
 
 
