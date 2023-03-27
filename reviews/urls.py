@@ -3,7 +3,7 @@ from reviews.admin import admin_site
 from django.urls import path , include
 from . import views
 
-
+# new url
 urlpatterns = [
     path('admin/', admin_site.urls),
     path('', views.index),
