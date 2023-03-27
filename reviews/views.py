@@ -6,7 +6,7 @@ from .utils import average_rating
 from .forms import SearchForm , PublisherForm
 from .models import Book , Contributor , Publisher
 
-from .PublisherForm import PublisherForm
+
 
 def index(request):
     return render(request, "reviews/base.html")
