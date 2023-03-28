@@ -109,4 +109,11 @@ def reveiw_edit(request,book_pk, review_pk=None):
         review = None
     
     if request.method == 'POST':
-        form = ReviewForm()
+        form = ReviewForm(request.POST, instance=review)
+        
+        if form.is_valid():
+            updated_reveiw = form.save(False)
+            updated_review.book = book
+            
+            if review is None:
+                messages.success(request, 'Review for {} created'.format
