@@ -116,4 +116,16 @@ def reveiw_edit(request,book_pk, review_pk=None):
             updated_review.book = book
             
             if review is None:
-                messages.success(request, 'Review for {} created'.format
+                messages.success(request, 'Review for {} created'.format(book))
+                
+            else:
+                updated_review.date_edited = timezone.now()
+                messages.success(request, "Review for \"{}\" updated.".format(book))
+            
+            updated_review.save()
+            return redirect("book_detail",book.pk)
+        
+    else:
+        form = ReviewForm(instance=review)
+        
+    return redn
