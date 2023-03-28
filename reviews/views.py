@@ -128,7 +128,7 @@ def review_edit(request,book_pk, review_pk=None):
     else:
         form = ReviewForm(instance=review)
         
-    return render(request,"review/instance-form.html", 
+    return render(request,"reviews/instance-form.html", 
                   {"form": form,
                    "instance": review,
                    "model_type" : "Review",
