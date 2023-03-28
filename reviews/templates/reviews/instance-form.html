@@ -4,8 +4,7 @@
 {% if instance %} 
 
  Editing {{model_type}} {{instance}} 
-
- {% esle % 
+ {% esle %} 
     New {{ model_type }}
 {% endif %} 
   {% endblock %} 
@@ -27,6 +26,7 @@
 {% endif %} 
 
 <form action="" method="post">
+    {% crsf_token %}
     {{ form.as_p }} 
     <button type="submit" class="btn btn-primary">
         {% if instance %}  Save {% else %} Create {% endif %} 
