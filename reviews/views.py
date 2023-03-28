@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404 , redirect
 from django.contrib import messages
-
+from django.utils import timezone
 from .models import Book
 from .utils import average_rating
 from .forms import SearchForm , PublisherForm , ReviewForm
@@ -112,7 +112,7 @@ def review_edit(request,book_pk, review_pk=None):
         form = ReviewForm(request.POST, instance=review)
         
         if form.is_valid():
-            updated_reveiw = form.save(False)
+            updated_review = form.save(False)
             updated_review.book = book
             
             if review is None:
