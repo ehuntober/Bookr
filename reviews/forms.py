@@ -1,5 +1,5 @@
 from django import forms 
-from .models import Publisher
+from .models import Publisher , Review
 
 
 class SearchForm(forms.Form):

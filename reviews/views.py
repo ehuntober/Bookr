@@ -95,11 +95,11 @@ def publisher_edit(request, pk=None):
     else:
         form = PublisherForm(instance=publisher)
 
-    return render(request, "reviews/form-example.html",
+    return render(request, "reviews/instance-form.html",
                   {"form": form, "instance": publisher, "model_type": "Publisher"})
 
     
-def reveiw_edit(request,book_pk, review_pk=None):
+def review_edit(request,book_pk, review_pk=None):
     book = get_object_or_404(Book, pk=book_pk)
     
     if review_pk is not None:
@@ -128,4 +128,10 @@ def reveiw_edit(request,book_pk, review_pk=None):
     else:
         form = ReviewForm(instance=review)
         
-    return redn
+    return render(request,"review/instance-form.html", 
+                  {"form": form,
+                   "instance": review,
+                   "model_type" : "Review",
+                   "related_instance": book,
+                   "related_model_type": "Book"
+                   })
