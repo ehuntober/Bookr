@@ -12,5 +12,19 @@
 
 {% block content %} 
   <h2> 
-    {% }
+    {%  if instance %} 
+      Edititng {{ model_type}} <em>{{instance}}</em>
+
+    {% else %} 
+     New {{ model_type }} 
+     {% endif %} 
+
   </h2>
+
+{% if related_instance and related_model_type %} 
+<p> {{related_model_type}} <em>{{related_instance }}</em> </p> 
+
+{% endif %} 
+
+
+
