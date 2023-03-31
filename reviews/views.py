@@ -160,5 +160,13 @@ def book_media(request,pk):
             image.save(fp=image_data, format=cover.image.format)
             book.cover.save(cover.name,images_file)
             
+        book.save()
+        messages.success(request,"Book {} was successfuly updated".format(book))
+        return redirect("book_detail",book.pk)
+    
+    else:
+        form = BookMediaForm(instance=book)
         
+    return render(request,"reviews/instance-form.html",
+                  {"instance":book,"form":form, "model_type": "Book", "is_file_upload":True})
             
