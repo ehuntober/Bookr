@@ -142,3 +142,8 @@ def review_edit(request,book_pk, review_pk=None):
                    })
     
     
+
+def book_media(request,pk):
+    book = get_object_or_404(Book,pk=pk)
+    
+    
