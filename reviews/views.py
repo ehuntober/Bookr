@@ -158,4 +158,7 @@ def book_media(request,pk):
             image.thumbnail((300,300))
             image_data = BytesIO()
             image.save(fp=image_data, format=cover.image.format)
+            book.cover.save(cover.name,images_file)
+            
+        
             
