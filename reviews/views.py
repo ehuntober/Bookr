@@ -1,3 +1,7 @@
+from io import BytesIO
+from PIL import Image
+
+from django.core.files.images import ImageFile
 from django.shortcuts import render, get_object_or_404 , redirect
 from django.contrib import messages
 from django.utils import timezone
@@ -135,3 +139,5 @@ def review_edit(request,book_pk, review_pk=None):
                    "related_instance": book,
                    "related_model_type": "Book"
                    })
+    
+    
