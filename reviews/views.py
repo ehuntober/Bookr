@@ -146,4 +146,16 @@ def review_edit(request,book_pk, review_pk=None):
 def book_media(request,pk):
     book = get_object_or_404(Book,pk=pk)
     
+    form = BookMediaForm(request.POST,request.FILES,instance=book)
     
+    if form.is_valid():
+        book = form.save(False)
+        
+        cover = form.cleaned_data.get("cover")
+        
+        if cover:
+            image = Image.open(cover)
+            image.thumbnail((300,300))
+            image_data = BytesIO()
+            image.save(fp=image_data, format=cover.image.format)
+            
