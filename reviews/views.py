@@ -171,5 +171,4 @@ def book_media(request, pk):
                   {"instance": book, "form": form, "model_type": "Book", "is_file_upload": True})
     
 
-def profile(request):
-    return render(request,'profile.html')
+
