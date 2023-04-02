@@ -21,13 +21,21 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('bookradmin/', admin_site.urls),
+    
+    
+#     path('', include('reviews.urls'))
+    
+# ]
+
+
 urlpatterns = [
+    path('accounts/', include(('django.contrib.auth.urls', 'auth'),
+         namespace='accounts')),
     path('admin/', admin.site.urls),
-    path('bookradmin/', admin_site.urls),
-    
-    
     path('', include('reviews.urls'))
-    
 ]
 
 
