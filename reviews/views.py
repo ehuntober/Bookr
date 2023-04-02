@@ -169,3 +169,7 @@ def book_media(request, pk):
 
     return render(request, "reviews/instance-form.html",
                   {"instance": book, "form": form, "model_type": "Book", "is_file_upload": True})
+    
+
+def profile(request):
+    return render(request,'profile.html')
