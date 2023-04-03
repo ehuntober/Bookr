@@ -1,2 +1,2 @@
 def profile(request):
-    return render(request,'profile.html')u565
+    return render(request,'profile.html')
