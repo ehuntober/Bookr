@@ -30,7 +30,7 @@ from django.conf import settings
     
 # ]
 
-from bookr.view import profile
+from bookr.views import profile
 
 urlpatterns = [
     path('accounts/', include(('django.contrib.auth.urls', 'auth'),
