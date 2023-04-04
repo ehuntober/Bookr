@@ -11,12 +11,14 @@ from .utils import average_rating
 from .forms import SearchForm , PublisherForm , ReviewForm , BookMediaForm
 from .models import Book , Contributor , Publisher , Review
 
+from django.contrib.auth.decorators import permission_required
+
 
 
 def index(request):
     return render(request, "reviews/base.html")
 
-
+#NEW WORK
 
 def book_search(request):
     search_text = request.GET.get("search", "")
