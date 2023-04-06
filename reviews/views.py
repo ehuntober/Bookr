@@ -18,7 +18,7 @@ from django.contrib.auth.decorators import permission_required
 def index(request):
     return render(request, "reviews/base.html")
 
-#this the right code
+
 
 def book_search(request):
     search_text = request.GET.get("search", "")
