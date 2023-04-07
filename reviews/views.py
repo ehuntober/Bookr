@@ -82,7 +82,7 @@ def book_detail(request, pk):
 
 
 
-
+@permission_required('edit_publisher')
 def publisher_edit(request, pk=None):
     if pk is not None:
         publisher = get_object_or_404(Publisher, pk=pk)
