@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.urls import include, path
 
 from bookr.views import profile
-from bookr_admin.admin import admin_site
+# from bookr_admin.admin import admin_site
 
 urlpatterns = [
     path('accounts/', include(('django.contrib.auth.urls', 'auth'),
