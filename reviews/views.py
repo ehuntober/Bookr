@@ -11,7 +11,7 @@ from .utils import average_rating
 from .forms import SearchForm , PublisherForm , ReviewForm , BookMediaForm
 from .models import Book , Contributor , Publisher , Review
 
-from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.decorators import permission_required , user_passes_test
 
 
 
@@ -82,7 +82,7 @@ def book_detail(request, pk):
 
 
 
-@permission_required('edit_publisher')
+# @permission_required('edit_publisher')
 def publisher_edit(request, pk=None):
     if pk is not None:
         publisher = get_object_or_404(Publisher, pk=pk)
@@ -174,3 +174,7 @@ def book_media(request, pk):
     
 
 
+def is_staff_user(user):
+    return user.is_staff
+
+@user_passes_test(is_staff)
