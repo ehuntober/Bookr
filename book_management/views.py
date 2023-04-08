@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import HttpResponse
-from django.views.generic.edit import FormView , UpdateView
+from django.views.generic.edit import FormView , UpdateView , DeleteView
 from django.views import View 
 
 from .forms import BookForm
@@ -28,4 +28,10 @@ class BookUpdateView(UpdateView):
     fields = ['name', 'author']
     template_name = 'book_form.html'
     success_url = '/book_management/entry_success'
+    
+
+class BookDeleteView(DeleteView):
+    model = Book
+    template_name = 'book_delete_form.html'
+    success_url = '/book_management/delete_success'
     
