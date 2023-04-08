@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% comment %} {% extends "base.html" %}
 
 {% block title %}Bookr{% endblock %}
 
@@ -58,5 +58,32 @@
   </div>
 
   </div>
+
+{% endblock %} {% endcomment %}
+
+
+
+
+
+
+{% extends "base.html" %}
+
+{% load profile_tags %}
+
+{% block title %}Bookr{% endblock %}
+
+{% block heading %}Profile{% endblock %}
+
+{% block content %}
+  <ul>
+      <li>Username: {{ user.username }} </li>
+      <li>Name: {{ user.first_name }} {{ user.last_name }}</li>
+      <li>Date Joined: {{ user.date_joined }} </li>
+      <li>Email: {{ user.email }}</li>
+      <li>Last Login: {{ user.last_login }}</li>
+      <li>Groups: {{ groups }}{% if not groups %}None{% endif %} </li>
+  </ul>
+  {% book_list user.username %}
+
 
 {% endblock %}
