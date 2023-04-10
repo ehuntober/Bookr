@@ -1,4 +1,4 @@
-{% comment %} {% extends "base.html" %}
+ {% extends "base.html" %}
 
 {% block title %}Bookr{% endblock %}
 
@@ -59,14 +59,14 @@
 
   </div>
 
-{% endblock %} {% endcomment %}
+{% endblock %} 
 
 
 
 
 
 
-{% extends "base.html" %}
+{% comment %} {% extends "base.html" %}
 
 {% load profile_tags %}
 
@@ -86,4 +86,4 @@
   {% book_list user.username %}
 
 
-{% endblock %}
+{% endblock %} {% endcomment %}
