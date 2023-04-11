@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'reviews',
     'book_management'
     # reiew
+    'restframework'
 ]
 
 MIDDLEWARE = [
