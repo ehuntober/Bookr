@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'reviews',
-    'book_management'
+    'book_management',
     # reiew
     'restframework'
 ]
