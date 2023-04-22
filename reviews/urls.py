@@ -1,7 +1,7 @@
 from reviews.admin import admin_site
 
 from django.urls import path , include
-from . import views
+from . import views , api_view
 
 # new url
 urlpatterns = [
@@ -15,6 +15,9 @@ urlpatterns = [
     path('book-search/', views.book_search, name='book_search'),
     path('publishers/<int:pk>/',views.publisher_edit, name='publisher_edit'),
     path('publishers/new/',views.publisher_edit, name='publisher_create'),
+    
+    # api urls
+    
 ]
 
 #   path('admin/',admin_site.urls),
