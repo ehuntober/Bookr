@@ -13,3 +13,5 @@ def first_api_view(request):
 @api_view()
 def all_books(request):
     books = Book.objects.all()
+    book_serializer = BookSerializer(books,many=True)
+    return Response(book_serializer.data)
