@@ -17,8 +17,7 @@ urlpatterns = [
     path('publishers/new/',views.publisher_edit, name='publisher_create'),
     
     # api urls
-    path('api/first_api_view/'),
-    path(api_view.first_api_view)
+    path('api/first_api_view/', api_views.first_api_view)
     
 ]
 
