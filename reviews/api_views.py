@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response 
 
 from .models import Book 
-from .seri
+from .serializers import BookSerializer
 
 @api_view()
 def first_api_view(request):
@@ -12,4 +12,4 @@ def first_api_view(request):
 
 @api_view()
 def all_books(request):
-    books = Book
+    books = Book.objects.all()
