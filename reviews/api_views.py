@@ -1,5 +1,5 @@
 from rest_framework.decorators import api_view
-from rest_framework.decorators import Response 
+from rest_framework.deco import Response 
 
 from .models import Book 
 

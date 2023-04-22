@@ -1,7 +1,7 @@
 from reviews.admin import admin_site
 
 from django.urls import path , include
-from . import views , api_view
+from . import views , api_views
 
 # new url
 urlpatterns = [
