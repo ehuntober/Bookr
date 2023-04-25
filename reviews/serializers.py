@@ -1,8 +1,8 @@
 
 
-# from rest_framework import serializers
-# from  .models import Contributor 
-# from .models import Book, Publisher , BookContributor , Contributor
+from rest_framework import serializers
+from  .models import Contributor 
+from .models import Book, Publisher , BookContributor , Contributor
 
 # class PublisherSerializer(serializers.Serializer):
 #     name = serializers.CharField()
@@ -24,35 +24,35 @@
 #         fields = ["first_names","last_names","email"]
         
 
-# class PublisherSerializer(serializers.ModelSerializer):
+class PublisherSerializer(serializers.ModelSerializer):
     
-#     class Meta:
-#         model = Publisher
-#         fields = ['name','website', 'email']
+    class Meta:
+        model = Publisher
+        fields = ['name','website', 'email']
         
         
-# class BookSerializer(serializers.ModelSerializer):
+class BookSerializer(serializers.ModelSerializer):
     
-#     publisher = PublisherSerializer()
+    publisher = PublisherSerializer()
     
-#     class Meta:
-#         model = Book
-#         fields = ['title','publication_date', 'isnb','publisher']
+    class Meta:
+        model = Book
+        fields = ['title','publication_date', 'isnb','publisher']
         
         
-# class ContributionSerializer(serializers.ModelSerializer):
-#     book = BookSerializer()
+class ContributionSerializer(serializers.ModelSerializer):
+    book = BookSerializer()
     
-#     class Meta:
-#         model = BookContributor
-#         fields=['book','role']
+    class Meta:
+        model = BookContributor
+        fields=['book','role']
         
-# class ContributorSerializer(serializers.ModelSerializer):
-#     bookcontributor_set = ContributionSerializer(read_only=True, many=True)
-#     number_contributions = serializers.ReadOnlyField()
-#     class Meta:
-#         model = Contributor
-#         fields = ['first_names', 'last_names', 'email', 'bookcontributor_set', 'number_contributions']
+class ContributorSerializer(serializers.ModelSerializer):
+    bookcontributor_set = ContributionSerializer(read_only=True, many=True)
+    number_contributions = serializers.ReadOnlyField()
+    class Meta:
+        model = Contributor
+        fields = ['first_names', 'last_names', 'email', 'bookcontributor_set', 'number_contributions']
 
 
 
