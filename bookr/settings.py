@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'reviews',
     'book_management',
     # reiew
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
