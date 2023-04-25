@@ -15,3 +15,10 @@ class BookSerializer(serializers.Serializer):
     isnb = serializers.CharField()
     publisher = PublisherSerializer()
     
+
+class ContributorSerializer(serializers.Serializer):
+    
+    class Meta:
+        model = Contributor
+        fields = ["first_names","last_names","email"]
+    
