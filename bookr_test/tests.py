@@ -12,3 +12,6 @@ class TestPublisherModel(TestCase):
         
     def test_create_publisher(self):
         self.assertIsInstance(self.p, Publisher)
+        
+    def test_str_representation(self):
+        self.assertEqual(str(self.p), "Packt")
