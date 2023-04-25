@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reviews',
     'book_management',
+    'bookr_test',
     # reiew
     'rest_framework',
     'rest_framework.authtoken'
