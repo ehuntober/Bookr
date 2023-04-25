@@ -9,10 +9,6 @@ from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_200_OK
 from rest_framework.views import APIView
 
 
-
-
-
-
 from rest_framework.decorators import api_view
 from rest_framework.response import Response 
 from .models import Book , Contributor
@@ -31,13 +27,19 @@ class Login(APIView):
         return Response({'token': token.key}, status=HTTP_200_OK)
     
     
+class BookViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    authentication_classes = []
+    permission_classes = []
 
 
-
-
-
-
-
+class ReviewViewSet(viewsets.ModelViewSet):
+    queryset = Review.objects.order_by('-date_created')
+    serializer_class = ReviewSerializer
+    pagination_class = LimitOffsetPagination
+    authentication_classes = []
+    
 
 
 
