@@ -17,7 +17,7 @@ from .models import Book, Publisher
 #     publisher = PublisherSerializer()
     
 
-class ContributorSerializer(serializers.ModelSerializer()):
+class ContributorSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Contributor
@@ -32,8 +32,9 @@ class PublisherSerializer(serializers.ModelSerializer):
         
         
 class BookSerializer(serializers.ModelSerializer):
+    
     publisher = PublisherSerializer()
     
     class Meta:
         model = Book
-        fields = ['title','publication_date', 'isnb']
+        fields = ['title','publication_date', 'isnb','publisher']
