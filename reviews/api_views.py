@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response 
 
-from .models import Book 
+from .models import Book , Contributor
 from .serializers import BookSerializer , ContributorSerializer
 
 from rest_framework import generics
