@@ -28,6 +28,7 @@ urlpatterns = [
     # path('admin/', admin_site.urls),
         path('admin/', admin.site.urls),
     path('', include('reviews.urls')),
+    path('',include('bookr_test.urls')),
     path('book_management/',include('book_management.urls'))
     
 ]
