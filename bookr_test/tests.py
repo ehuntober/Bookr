@@ -1,5 +1,5 @@
-from django.test import TestCase , Client
-from django.contrib.auth.models import User
+from django.test import TestCase , Client , RequestFactory
+from django.contrib.auth.models import User , AnonymousUser
 
 # Create your tests here.
 
@@ -43,3 +43,7 @@ class TestLoggedInGreetingView(TestCase):
         response = self.client.get('/test/greet_user')
         self.assertEquals(response.status_code,200)
         
+class TestLoggedInGreetingView2(TestCase):
+    
+    def setUp(self):
+        self.test_user = 
