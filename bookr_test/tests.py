@@ -46,4 +46,13 @@ class TestLoggedInGreetingView(TestCase):
 class TestLoggedInGreetingView2(TestCase):
     
     def setUp(self):
-        self.test_user = 
+        self.test_user = User.objects.create_user \
+                         (username='testuser',\
+                             password='test@#628password')
+        self.test_user.save()
+        self.factory = RequestFactory()
+        
+        
+    def test_user_greeting_not_authenticated(self):
+        request = self.factory.get('/test/greet_user')
+        
