@@ -21,3 +21,7 @@ class TestGretingView(TestCase):
     def setUp(self):
         self.client = Client()
         
+    def testing_greeting_view(self):
+        response = self.client.get('/test/greeting')
+        self.assertEquals(response.status_code, 200)
+        
