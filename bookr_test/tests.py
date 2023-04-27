@@ -55,4 +55,7 @@ class TestLoggedInGreetingView2(TestCase):
         
     def test_user_greeting_not_authenticated(self):
         request = self.factory.get('/test/greet_user')
+        request.user = self.test_user
+        response = greeting_view_user(request)
+        self.assertEquals(response.status_code,200)
         
