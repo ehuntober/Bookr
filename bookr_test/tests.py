@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase , Client
 
 # Create your tests here.
 
@@ -15,3 +15,9 @@ class TestPublisherModel(TestCase):
         
     def test_str_representation(self):
         self.assertEqual(str(self.p), "Packt")
+        
+class TestGretingView(TestCase):
+    """ Test the greeting view."""
+    def setUp(self):
+        self.client = Client()
+        
