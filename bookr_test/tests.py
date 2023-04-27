@@ -1,4 +1,5 @@
 from django.test import TestCase , Client
+from django.contrib.auth.models import User
 
 # Create your tests here.
 
@@ -24,4 +25,9 @@ class TestGretingView(TestCase):
     def testing_greeting_view(self):
         response = self.client.get('/test/greeting')
         self.assertEquals(response.status_code, 200)
-        
+
+
+class TestLoggedInGreetingView(TestCase):
+    """Test the greeting view for the authenticated users."""
+    def setUp(self):
+        test_user = User.objects.crete_user(username='testuser',)
