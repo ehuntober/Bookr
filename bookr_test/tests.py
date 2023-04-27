@@ -30,4 +30,16 @@ class TestGretingView(TestCase):
 class TestLoggedInGreetingView(TestCase):
     """Test the greeting view for the authenticated users."""
     def setUp(self):
-        test_user = User.objects.crete_user(username='testuser',)
+        test_user = User.objects.create_user(username='testuser',password='test@#628password')
+        test_user.save()
+        self.client = Client()
+    
+    def test_user_greeting_not_authenticated(self):
+        response = self.client.get('/test/greet_user')
+        self.assertEquals(response.status_code,302)
+        
+    def test_user_authenticated(self):
+        login = self.client.login(username='testuser',password='test@#628password')
+        response = self.client.get('/test/greet_user')
+        self.assertEquals(response.status_code,200)
+        
