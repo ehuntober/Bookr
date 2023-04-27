@@ -2,7 +2,7 @@ from django.test import TestCase , Client , RequestFactory
 from django.contrib.auth.models import User , AnonymousUser
 
 # Create your tests here.
-
+from .views import greeting_view_user
 from .models import Publisher
 
 class TestPublisherModel(TestCase):
